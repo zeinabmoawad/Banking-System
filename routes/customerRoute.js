@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const CustomerModel=mongoose.model("Customers");
 module.exports = (app) =>{
-app.post("./AddCustomer", async (request, response) => {
+app.post("/AddCustomer", async (request, response) => {
     let { Name, Mobile, Email, Address, Gender, AccountNum, Balance, NationalID } = request.body;
 
     //2.Add Customer
@@ -32,24 +32,17 @@ app.post("./AddCustomer", async (request, response) => {
 }
 )
 
-app.get("./FindCustomers", async (request, response) => {
-    try {
-        const CustomersCollections = await CustomerModel.find({}).sort({ Name: 1 })
-        return response.send({ status: 200, CustomersCollections })
-    }
-    catch (error) {
-        return response.send({ status: -1, Message: error })
-    }
-    // await CustomerModel.find({}, (err, CustomersObj) => {
-    //     if (err)
-    //         response.send({ status: -1, Message: err })
-    //     else if (CustomersObj.length >= 0)
-    //         response.json(CustomersObj)
-    // }).sort({ Name: 1 })
+app.get("/FindCustomers", async (request, response) => {
+    await CustomerModel.find({}, (err, CustomersObj) => {
+        if (err)
+            response.send({ status: -1, Message: err })
+        else if (CustomersObj.length >= 0)
+            response.json(CustomersObj)
+    }).sort({ Name: 1 })
 })
 
 // //B.Find Customer by ID
-app.get("./FindCustomerByID/:ID", async (request, response) => {
+app.get("/FindCustomerByID/:ID", async (request, response) => {
     const ID = request.params.ID;
 
     await CustomerModel.find({ _id: ID }, (err, Customerobj) => {
