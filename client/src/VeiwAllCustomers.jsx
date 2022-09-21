@@ -11,7 +11,7 @@ function VeiwAllCustomers() {
     const [Customers, setCustomers] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:50000/FindCustomers`).then((response) => {
+        axios.get(`http://localhost:5000/FindCustomers`).then((response) => {
             if (response.data.status == -1) {
                 alert(response.data.Message)
                 return
