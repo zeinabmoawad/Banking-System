@@ -1,0 +1,153 @@
+.navbar{
+  width: 100%;
+  background-color:gainsboro;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.navbar2{
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  background-color: blueviolet;
+}
+.navbarIcon{
+  width: 300px;
+  background-color: rgb(223, 255, 244);
+margin-left: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+.navbarIcon ul li{
+  list-style: none;
+  text-align: center;
+}
+.navbarIcon ul li a{
+  text-decoration:none;
+  color: gray;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.navbarIcon form button{
+  background-color:rgb(223, 255, 244) ;
+  color: gray;
+  border: 5px solid  rgb(223, 255, 244);
+}
+.titleinhome{
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.titleinhome h1{
+  width: 700px;
+  height: 300px;
+  background-color: bisque;
+  color: gray;
+  font-weight: bolder;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+.customerHeader{
+  width: 100%;
+  height: 100px;
+  background-color: bisque;
+  color: gray;
+  font-weight: bolder;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.card{
+  width: 60%;
+  /* //background-color: red; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 5px solid  rgb(223, 255, 244);
+  background-color: gainsboro;
+}
+.card h2{
+  font-size: 35px;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: antiquewhite;
+  width: 400px;
+  border-radius: 30px;
+}
+.card p{
+  font-size: 20px;
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: antiquewhite;
+  width: 300px;
+  border-radius: 30px;
+}
+.tranfercard{
+  width: 60%;
+  /* //background-color: red; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 5px solid  rgb(223, 255, 244);
+  background-color: gainsboro;
+}
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+/* } */
