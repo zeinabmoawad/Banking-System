@@ -11,7 +11,7 @@ function VeiwAllCustomers() {
     const [Customers, setCustomers] = useState([])
 
     useEffect(() => {
-        axios.get(`https://sparksbankingsystems.herokuapp.com/FindCustomers`).then((response) => {
+        axios.get(`/FindCustomers`).then((response) => {
             if (response.data.status == -1) {
                 alert(response.data.Message)
                 return
