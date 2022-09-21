@@ -33,12 +33,19 @@ app.post("/AddCustomer", async (request, response) => {
 )
 
 app.get("/FindCustomers", async (request, response) => {
-    await CustomerModel.find({}, (err, CustomersObj) => {
-        if (err)
-            response.send({ status: -1, Message: err })
-        else if (CustomersObj.length >= 0)
-            response.json(CustomersObj)
-    }).sort({ Name: 1 })
+    try {
+        const CustomersCollections = await CustomerModel.find({}).sort({ Name: 1 })
+        return response.send({ status: 200, CustomersCollections })
+    }
+    catch (error) {
+        return response.send({ status: -1, Message: error })
+    }
+    // await CustomerModel.find({}, (err, CustomersObj) => {
+    //     if (err)
+    //         response.send({ status: -1, Message: err })
+    //     else if (CustomersObj.length >= 0)
+    //         response.json(CustomersObj)
+    // }).sort({ Name: 1 })
 })
 
 // //B.Find Customer by ID
