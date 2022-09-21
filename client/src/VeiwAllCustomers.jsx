@@ -11,7 +11,7 @@ function VeiwAllCustomers() {
     const [Customers, setCustomers] = useState([])
 
     useEffect(() => {
-        axios.get("/FindCustomers").then((response) => {
+        axios.get(`http://localhost:5000/FindCustomers`).then((response) => {
             if (response.data.status == -1) {
                 alert(response.data.Message)
                 return
@@ -31,7 +31,7 @@ function VeiwAllCustomers() {
                 <Route path='/AllCustomers/SelectAndView' element={<SelectAndView/>}></Route>
                 <Route path='/' element={<Home/>}></Route>
             </Routes> */}
-            <div className='customerHeader'><h2>Customersssssssss</h2></div>
+            <div className='customerHeader'><h2>Customers</h2></div>
             <hr />
             {Customers ? (Customers.map((Customer) => {
                 return <CustomersCard Customer={Customer}></CustomersCard>
