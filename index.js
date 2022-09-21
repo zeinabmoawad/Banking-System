@@ -32,7 +32,7 @@ mongoose.connect(
 // )
 //     .then(() => console.log("MongoDB has been connected"))
 //     .catch((err) => console.log(err));
-
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
