@@ -12,7 +12,7 @@ require('./models/Transfers');
 
 //Connection to DB
 mongoose.connect(
-  "mongodb+srv://zeinab-moawad:482000zeinab@bankingsystem.6chtqhn.mongodb.net/test",
+    process.env.MONGODB_CONNECTION_STRING,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
