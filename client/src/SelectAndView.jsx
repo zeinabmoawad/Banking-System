@@ -13,7 +13,7 @@ function SelectAndView() {
   const [Customers, setCustomers] = useState([])
 
   useEffect(() => {
-    axios.get(`/FindCustomers`).then((response) => {
+    axios.get("/FindCustomers").then((response) => {
       if (response.data.status == -1) {
         alert(response.data.Message)
         return
@@ -36,7 +36,7 @@ function SelectAndView() {
     }
     else {
 
-      axios.put(`/Transfer`, { Customer_ID_From: CustomerIDFrom, Customer_ID_To: CustomerIDTo, Amount: Amount }).then((response) => {
+      axios.put("/Transfer", { Customer_ID_From: CustomerIDFrom, Customer_ID_To: CustomerIDTo, Amount: Amount }).then((response) => {
         // console.log(response.data) 
         if (response.data.status === -1) {
           console.log("err")
