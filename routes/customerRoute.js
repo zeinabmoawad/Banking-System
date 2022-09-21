@@ -17,7 +17,7 @@ app.post("/AddCustomer", async (request, response) => {
         NationalID
     })
 
-    await  newCustomer.save(async (error, NewCustomerobj) => {
+      newCustomer.save(async (error, NewCustomerobj) => {
         if (error) {
             response.send({ status: -1, Message: error })
             return;
@@ -33,7 +33,7 @@ app.post("/AddCustomer", async (request, response) => {
 )
 
 app.get("/FindCustomers", async (request, response) => {
-    await CustomerModel.find({}, (err, CustomersObj) => {
+     CustomerModel.find({}, (err, CustomersObj) => {
         if (err)
             response.send({ status: -1, Message: err })
         else if (CustomersObj.length >= 0)
@@ -45,7 +45,7 @@ app.get("/FindCustomers", async (request, response) => {
 app.get("/FindCustomerByID/:ID", async (request, response) => {
     const ID = request.params.ID;
 
-    await CustomerModel.find({ _id: ID }, (err, Customerobj) => {
+     CustomerModel.find({ _id: ID }, (err, Customerobj) => {
         if (err)
             response.send({ status: -1, err })
         else if (Customerobj.length > 0) {

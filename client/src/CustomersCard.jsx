@@ -14,7 +14,7 @@ function CustomersCard({ Customer }) {
   return (
     <div>
       {Customer?<div className='card'>
-      <h2>🧑{Customers.Name}</h2>
+      <h2> 🧑{Customers.Name}👧</h2>
       <div>
         <p>📱Mobile: {Customers.Mobile}</p>
         <p>📧Email: {Customers.Email}</p>
