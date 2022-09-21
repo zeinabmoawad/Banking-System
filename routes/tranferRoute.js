@@ -51,7 +51,7 @@ app.put("/Transfer", async (request, response) => {
                     // //else done 
                     // //add Thus student to WorkShop
                     console.log(Customer_ID_From);
-                    const res =axios.post("/AddTransfer", {From:Customer_ID_From, To:Customer_ID_To, amount:Amount })
+                    const res =axios.post("http://localhost:5000/AddTransfer", {From:Customer_ID_From, To:Customer_ID_To, amount:Amount })
                     if (res.status != 200) {
                         response.send({ status: 402, Mesaage: res.Message })
                         return;
