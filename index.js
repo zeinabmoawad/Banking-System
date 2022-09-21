@@ -12,7 +12,7 @@ require('./models/Transfers');
 
 //Connection to DB
 mongoose.connect(
-    process.env.MONGODB_CONNECTION_STRING,
+    "mongodb+srv://zeinab-moawad:482000zeinab@bankingsystem.6chtqhn.mongodb.net/test",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -39,7 +39,7 @@ app.use(bodyParser.json())
 require('./routes/customerRoute.js')(app)
 require('./routes/tranferRoute.js')(app)
 
-const PORT = process.env.PORT || 5000;
+const PORT = sparksbankingsystems.herokuapp.com || 5000;
 
 // Accessing the path module
 const path = require("path");
