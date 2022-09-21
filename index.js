@@ -39,7 +39,7 @@ app.use(bodyParser.json())
 require('./routes/customerRoute.js')(app)
 require('./routes/tranferRoute.js')(app)
 
-const PORT = sparksbankingsystems.herokuapp.com || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Accessing the path module
 const path = require("path");
