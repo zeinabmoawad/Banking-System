@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const CustomerModel=mongoose.model("Customers");
 module.exports = (app) =>{
-app.post("/AddCustomer", async (request, response) => {
+app.post("./AddCustomer", async (request, response) => {
     let { Name, Mobile, Email, Address, Gender, AccountNum, Balance, NationalID } = request.body;
 
     //2.Add Customer
@@ -32,7 +32,7 @@ app.post("/AddCustomer", async (request, response) => {
 }
 )
 
-app.get("/FindCustomers", async (request, response) => {
+app.get("./FindCustomers", async (request, response) => {
     try {
         const CustomersCollections = await CustomerModel.find({}).sort({ Name: 1 })
         return response.send({ status: 200, CustomersCollections })
@@ -49,7 +49,7 @@ app.get("/FindCustomers", async (request, response) => {
 })
 
 // //B.Find Customer by ID
-app.get("/FindCustomerByID/:ID", async (request, response) => {
+app.get("./FindCustomerByID/:ID", async (request, response) => {
     const ID = request.params.ID;
 
     await CustomerModel.find({ _id: ID }, (err, Customerobj) => {
