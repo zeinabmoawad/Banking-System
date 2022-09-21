@@ -1,6 +1,6 @@
-import { model } from "mongoose";
-const CustomerModel=model("Customers");
-export default(app)=>{
+const mongoose = require("mongoose");
+const CustomerModel=mongoose.model("Customers");
+module.exports = (app) =>{
 app.post("/AddCustomer", async (request, response) => {
     let { Name, Mobile, Email, Address, Gender, AccountNum, Balance, NationalID } = request.body;
 

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 //Defing Schema
 const  CustomerSchema=mongoose.Schema({
@@ -39,6 +39,5 @@ const  CustomerSchema=mongoose.Schema({
 })
 
 //creating Collection
-const CustomerModel=mongoose.model("Customers",CustomerSchema)
 
-export default CustomerModel
+module.exports=mongoose.model("Customers",CustomerSchema)

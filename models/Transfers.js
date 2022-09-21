@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 //Defing Schema
 const  TransferSchema=mongoose.Schema({
@@ -17,6 +17,4 @@ const  TransferSchema=mongoose.Schema({
 })
 
 //creating Collection
-const TransferModel=mongoose.model("Transfers",TransferSchema)
-
-export default TransferModel
+module.exports=mongoose.model("Transfers",TransferSchema)

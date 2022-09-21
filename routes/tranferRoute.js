@@ -1,7 +1,8 @@
-import { model } from "mongoose";
-const CustomerModel=model("Customers");
-const TransfersModel=model("Transfers");
-export default(app)=>{
+const mongoose = require("mongoose");
+const CustomerModel=mongoose.model("Customers");
+const TransfersModel=mongoose.model("Transfers");
+const axios = require("axios");
+module.exports = (app) =>{
     //c.
 app.put("/Transfer", async (request, response) => {
     const { Customer_ID_From, Customer_ID_To, Amount } = request.body
@@ -23,7 +24,7 @@ app.put("/Transfer", async (request, response) => {
                     const Customerquery = CustomerModel.findByIdAndUpdate({ _id: Customer_ID_From }, { Balance: BalanceFrom },(err,updated)=>{
     
                             if(err){
-                                console.log("errooor");
+                                console.log("error");
                             }
                             else{
                                 console.log("updated");
@@ -36,7 +37,7 @@ app.put("/Transfer", async (request, response) => {
                     const Customerquery1 = CustomerModel.findByIdAndUpdate({ _id: Customer_ID_To }, { Balance: BalanceTo },(err,updated)=>{
     
                         if(err){
-                            console.log("errooor");
+                            console.log("error");
                         }
                         else{
                             console.log("updated");
@@ -50,10 +51,9 @@ app.put("/Transfer", async (request, response) => {
                     // //else done 
                     // //add Thus student to WorkShop
                     console.log(Customer_ID_From);
-                    const res =await axios.post("/AddTransfer", {From:Customer_ID_From, To:Customer_ID_To, amount:Amount })
-                    if (res.data.status != 200) {
-                        console.log("kxjnxmkw");
-                        response.send({ status: 402, Mesaage: res.data.Message })
+                    const res =axios.post("/AddTransfer", {From:Customer_ID_From, To:Customer_ID_To, amount:Amount })
+                    if (res.status != 200) {
+                        response.send({ status: 402, Mesaage: res.Message })
                         return;
                     }
                     response.send({ Message: "Transfer Operation succeeded" })

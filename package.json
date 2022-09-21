@@ -1,8 +1,9 @@
 {
   "name": "task1-back",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "type": "module",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
@@ -12,6 +13,7 @@
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -23,6 +25,5 @@
     "express": "^4.18.1",
     "mongoose": "^6.6.1",
     "nodemon": "^2.0.20"
-  },
-  "description": ""
+  }
 }

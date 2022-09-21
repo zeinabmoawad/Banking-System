@@ -1,9 +1,8 @@
-import bodyParser from 'body-parser'
-import express, { request, response } from 'express'
-import mongoose from 'mongoose'
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 require("dotenv").config();
-import cors from 'cors'
-import axios from 'axios'
+const cors = require("cors");
 
 const app = express();
 app.use(cors());
@@ -13,7 +12,7 @@ require('./models/Transfers');
 
 //Connection to DB
 mongoose.connect(
-    process.env.MONGODB_CONNECTION_STRING,
+    "mongodb+srv://zeinab-moawad:482000zeinab@bankingsystem.6chtqhn.mongodb.net/test",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -21,6 +20,19 @@ mongoose.connect(
 )
     .then(() => console.log("MongoDB has been connected"))
     .catch((err) => console.log(err));
+
+
+//Connection to DB
+// mongoose.connect(
+//     process.env.MONGODB_CONNECTION_STRING,
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//     }
+// )
+//     .then(() => console.log("MongoDB has been connected"))
+//     .catch((err) => console.log(err));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
