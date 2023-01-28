@@ -4,5 +4,7 @@ https://youtu.be/jSXXV7OxtMI
 
 ###Use to build 
 
-HTML - CSS - JavaScript - React - Nodejs - Heroku 
+Idea: website for making banking transitions for the sparks foundation task
+Technology: React.js | Node.js | Express.js | Mongoose | Heroku
+
 
